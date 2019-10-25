@@ -63,17 +63,6 @@ class Game
     IDENTICALS[letter] || letter
   end
 
-  #def normalized_letters
-   # @letters.each do |letter|
-    #  if letter == "Й" || letter == "Ё"
-     #   @normalized_letters << normalize_letter(letter)
-      #else
-       # @normalized_letters << letter
-      #end
-    #end
-     # @normalized_letters
-  #end
-
   def normalized_letters
     @letters.map{ |letter| normalize_letter(letter) }
   end
