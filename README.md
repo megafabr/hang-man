@@ -236,5 +236,33 @@ $ ruby main.rb
 ### Разработка
 1. Программа hangman была разработана в качестве домашнего задания в курсе Ruby on Rails
 2. Была поставлена задача вставить в уже готовую программу hangman возможность замены для пар букв ("И" и "Й") и ("Е" и "Ё")
-3. Поставленная задача коснулась изменениями в классе Game
+3. Поставленная задача коснулась изменениями в классе Game:
+* добавлен метод normalize_letter
+```
+def normalized_letters
+    @letters.map{ |letter| normalize_letter(letter) }
+  end
+```
+* добавлен метод normalize_letter с введением константы IDENTICALS
+```
+IDENTICALS = {
+      "Й" => "И",
+      "Ё" => "Е",
+    }
+def normalize_letter(letter)
+    IDENTICALS[letter] || letter
+  end
+  ```
+  * в метод play? добавлена обработка букв "Й" и "Ё" (две первые строчки)
+  ```
+  def letters_to_guess
+    @letters.map do |letter|
+      if @user_guesses.include?(normalize_letter(letter))
+        letter
+      else
+        nil
+      end
+    end
+  end
+  ```
 
