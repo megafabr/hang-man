@@ -9,7 +9,8 @@
 ```
 git clone git@github.com:megafabr/hangman.git
 ```
-установить нужные гемы командой `bundle` и запустить приложение через `bundle exec ruby main.rb`
+установить нужные гемы командой `bundle` и запустить приложение через `bundle exec ruby main.rb`.
+
 2. В состав программы входят:
 * основная программа main.rb
 * папка lib с программами двух классов Game и ConsoleInterface соответственно в файлах game.rb и console_interface.rb
